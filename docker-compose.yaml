@@ -1,0 +1,20 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: event-planner
+      POSTGRES_USER: alhb
+      POSTGRES_PASSWORD: asdasd123
+    ports:
+      - "5432:5432"
